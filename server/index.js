@@ -48,23 +48,31 @@ await recordingsDB.read();
 
 // ------------------------------------------------------------------
 // 3️⃣  Express & Socket.io setup
+// ------------------------------------------------------------------
+const app = express();
 app.use(cors({
     origin: [
         'http://localhost:5173',
         'https://moot-court-simulator.vercel.app',
-        'https://moot-court-simulator-*.vercel.app'
+        'https://moot-court-simulator-git-main-diyamittal02s-projects.vercel.app',
+        /^https:\/\/moot-court-simulator-.*\.vercel\.app$/
     ],
     credentials: true
 }));
-// ------------------------------------------------------------------
-const app = express();
-app.use(cors());
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
 const server = http.createServer(app);
 const io = new SocketIOServer(server, {
-    cors: { origin: '*', methods: ['GET', 'POST'] },
+    cors: {
+        origin: [
+            'http://localhost:5173',
+            'https://moot-court-simulator.vercel.app',
+            'https://moot-court-simulator-git-main-diyamittal02s-projects.vercel.app',
+            /^https:\/\/moot-court-simulator-.*\.vercel\.app$/
+        ],
+        methods: ['GET', 'POST']
+    },
 });
 
 // ------------------------------------------------------------------
