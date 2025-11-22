@@ -1,0 +1,199 @@
+[
+  {
+    "id": "rec_001",
+    "caseTitle": "Miranda v. Arizona",
+    "type": "Practice",
+    "role": "Petitioner",
+    "recordedAt": "2025-11-20T14:30:00Z",
+    "duration": 1245,
+    "speakingTime": 845,
+    "argumentCount": 12,
+    "objectionCount": 3,
+    "score": 85,
+    "hasHighlights": true,
+    "transcript": [
+      {
+        "timestamp": 0,
+        "speaker": "Judge",
+        "text": "This court is now in session. Counsel for the petitioner, you may begin your opening statement."
+      },
+      {
+        "timestamp": 15,
+        "speaker": "Petitioner",
+        "text": "Thank you, Your Honor. May it please the court, this case concerns the fundamental Fifth Amendment right against self-incrimination."
+      },
+      {
+        "timestamp": 35,
+        "speaker": "Petitioner",
+        "text": "The facts are clear: Mr. Miranda was subjected to custodial interrogation without being informed of his constitutional rights."
+      },
+      {
+        "timestamp": 55,
+        "speaker": "Judge",
+        "text": "Counsel, what specific warnings do you propose should be required?"
+      },
+      {
+        "timestamp": 65,
+        "speaker": "Petitioner",
+        "text": "Your Honor, at minimum, suspects must be informed of their right to remain silent and their right to counsel."
+      },
+      {
+        "timestamp": 85,
+        "speaker": "Respondent",
+        "text": "Objection, Your Honor. Counsel is testifying rather than arguing."
+      },
+      {
+        "timestamp": 95,
+        "speaker": "Judge",
+        "text": "Overruled. Continue, counsel."
+      },
+      {
+        "timestamp": 105,
+        "speaker": "Petitioner",
+        "text": "The coercive nature of custodial interrogation creates an inherently intimidating atmosphere that requires procedural safeguards."
+      }
+    ],
+    "insights": {
+      "strengths": [
+        "Strong opening statement with clear thesis",
+        "Effective use of constitutional precedents",
+        "Confident delivery and pacing"
+      ],
+      "improvements": [
+        "Could provide more specific case citations",
+        "Address counterarguments more directly",
+        "Improve transitions between points"
+      ]
+    }
+  },
+  {
+    "id": "rec_002",
+    "caseTitle": "Brown v. Board of Education",
+    "type": "Tournament",
+    "role": "Respondent",
+    "recordedAt": "2025-11-18T10:15:00Z",
+    "duration": 1580,
+    "speakingTime": 920,
+    "argumentCount": 15,
+    "objectionCount": 5,
+    "score": 78,
+    "hasHighlights": true,
+    "transcript": [
+      {
+        "timestamp": 0,
+        "speaker": "Judge",
+        "text": "Counsel for respondent, please present your argument."
+      },
+      {
+        "timestamp": 12,
+        "speaker": "Respondent",
+        "text": "Your Honor, while we acknowledge the importance of equal protection, the state has made substantial efforts to equalize facilities."
+      },
+      {
+        "timestamp": 35,
+        "speaker": "Petitioner",
+        "text": "Objection! Counsel is misstating the facts. The facilities are demonstrably unequal."
+      },
+      {
+        "timestamp": 45,
+        "speaker": "Judge",
+        "text": "Sustained. Counsel, please stick to the record."
+      },
+      {
+        "timestamp": 60,
+        "speaker": "Respondent",
+        "text": "My apologies, Your Honor. The record shows significant investment in improving separate facilities."
+      }
+    ],
+    "insights": {
+      "strengths": [
+        "Good recovery from objection",
+        "Respectful courtroom demeanor",
+        "Clear articulation of arguments"
+      ],
+      "improvements": [
+        "Better fact verification before arguing",
+        "Anticipate opposing counsel's objections",
+        "Strengthen rebuttal preparation"
+      ]
+    }
+  },
+  {
+    "id": "rec_003",
+    "caseTitle": "Donoghue v. Stevenson",
+    "type": "Practice",
+    "role": "Petitioner",
+    "recordedAt": "2025-11-15T16:45:00Z",
+    "duration": 980,
+    "speakingTime": 650,
+    "argumentCount": 8,
+    "objectionCount": 2,
+    "score": 92,
+    "hasHighlights": false,
+    "transcript": [
+      {
+        "timestamp": 0,
+        "speaker": "Judge",
+        "text": "Good afternoon. Counsel for petitioner, you may proceed."
+      },
+      {
+        "timestamp": 10,
+        "speaker": "Petitioner",
+        "text": "Thank you, Your Honor. This case asks the court to recognize a duty of care owed by manufacturers to ultimate consumers."
+      },
+      {
+        "timestamp": 30,
+        "speaker": "Petitioner",
+        "text": "The traditional privity requirement creates an unjust barrier to recovery for those harmed by negligent manufacturing."
+      },
+      {
+        "timestamp": 55,
+        "speaker": "Judge",
+        "text": "Counsel, how do you respond to the floodgates argument?"
+      },
+      {
+        "timestamp": 65,
+        "speaker": "Petitioner",
+        "text": "Your Honor, the duty is limited by the concept of reasonable foreseeability. Not every injury will give rise to liability."
+      }
+    ],
+    "insights": {
+      "strengths": [
+        "Excellent handling of judicial questions",
+        "Clear and logical argument structure",
+        "Strong command of precedent",
+        "Persuasive policy arguments"
+      ],
+      "improvements": [
+        "Could elaborate more on limiting principles",
+        "Add more factual detail to strengthen narrative"
+      ]
+    }
+  },
+  {
+    "id": "3366d386-5e48-45f8-a357-d86f8ca3f14f",
+    "caseTitle": "Case #d636482b-74bc-4d50-b335-344053896486",
+    "type": "Practice",
+    "role": "Judge",
+    "duration": 23,
+    "speakingTime": 16,
+    "argumentCount": 0,
+    "objectionCount": 0,
+    "score": 60,
+    "hasHighlights": false,
+    "transcript": [],
+    "insights": {
+      "strengths": [
+        "Participated in the session",
+        "Maintained courtroom decorum",
+        "Active participation"
+      ],
+      "improvements": [
+        "Present more arguments to strengthen your case",
+        "Use objections strategically when appropriate",
+        "Practice citing more legal precedents"
+      ]
+    },
+    "recordedAt": "2025-11-22T18:20:47.682Z"
+  }
+]

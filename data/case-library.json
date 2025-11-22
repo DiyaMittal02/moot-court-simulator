@@ -1,0 +1,433 @@
+[
+    {
+        "id": "case_001",
+        "title": "Miranda v. Arizona",
+        "category": "Criminal Law",
+        "jurisdiction": "United States",
+        "difficulty": "Beginner",
+        "year": 1966,
+        "tags": [
+            "constitutional rights",
+            "criminal procedure",
+            "fifth amendment"
+        ],
+        "shortDescription": "Landmark case establishing the requirement for police to inform suspects of their rights.",
+        "facts": "Ernesto Miranda was arrested and interrogated by police without being informed of his constitutional rights. He confessed to crimes during the interrogation. The confession was used against him at trial.",
+        "legalIssue": "Whether statements obtained from a defendant during custodial interrogation are admissible if the defendant was not informed of their constitutional rights.",
+        "precedents": [
+            {
+                "name": "Escobedo v. Illinois (1964)",
+                "relevance": "Established right to counsel during interrogation"
+            }
+        ],
+        "keyArguments": {
+            "petitioner": [
+                "Fifth Amendment protection against self-incrimination requires warnings",
+                "Sixth Amendment guarantees right to counsel",
+                "Coercive nature of custodial interrogation necessitates safeguards"
+            ],
+            "respondent": [
+                "No constitutional requirement for specific warnings",
+                "Confession was voluntary",
+                "Warnings would hamper law enforcement"
+            ]
+        },
+        "outcome": "The Supreme Court ruled 5-4 that the prosecution may not use statements from custodial interrogation unless procedural safeguards are in place.",
+        "practiceQuestions": [
+            "What are the four Miranda warnings?",
+            "When must Miranda warnings be given?",
+            "What happens if police fail to give Miranda warnings?"
+        ]
+    },
+    {
+        "id": "case_002",
+        "title": "Brown v. Board of Education",
+        "category": "Constitutional Law",
+        "jurisdiction": "United States",
+        "difficulty": "Intermediate",
+        "year": 1954,
+        "tags": [
+            "civil rights",
+            "equal protection",
+            "education",
+            "fourteenth amendment"
+        ],
+        "shortDescription": "Declared state laws establishing separate public schools for black and white students unconstitutional.",
+        "facts": "Black children were denied admission to public schools attended by white children under laws requiring racial segregation. The plaintiffs argued that segregated schools were not equal and could never be made equal.",
+        "legalIssue": "Does segregation of children in public schools solely on the basis of race deprive minority children of equal educational opportunities?",
+        "precedents": [
+            {
+                "name": "Plessy v. Ferguson (1896)",
+                "relevance": "Established 'separate but equal' doctrine - to be overturned"
+            },
+            {
+                "name": "Sweatt v. Painter (1950)",
+                "relevance": "Found inequality in segregated law schools"
+            }
+        ],
+        "keyArguments": {
+            "petitioner": [
+                "Segregation violates Equal Protection Clause of 14th Amendment",
+                "Separate educational facilities are inherently unequal",
+                "Segregation generates feeling of inferiority affecting motivation to learn",
+                "Modern psychological knowledge shows harm of segregation"
+            ],
+            "respondent": [
+                "Plessy v. Ferguson precedent supports separate but equal",
+                "States have right to regulate education",
+                "Physical facilities are substantially equal",
+                "Social customs should not be changed by judicial decree"
+            ]
+        },
+        "outcome": "Unanimous decision that separate educational facilities are inherently unequal, violating the Equal Protection Clause.",
+        "practiceQuestions": [
+            "How did this case overturn Plessy v. Ferguson?",
+            "What role did social science evidence play?",
+            "What was the implementation timeline ordered by the Court?"
+        ]
+    },
+    {
+        "id": "case_003",
+        "title": "Roe v. Wade",
+        "category": "Constitutional Law",
+        "jurisdiction": "United States",
+        "difficulty": "Advanced",
+        "year": 1973,
+        "tags": [
+            "privacy rights",
+            "due process",
+            "reproductive rights"
+        ],
+        "shortDescription": "Established constitutional right to abortion under the right to privacy.",
+        "facts": "Jane Roe, a pregnant single woman, challenged Texas criminal abortion laws that prohibited abortion except to save the mother's life. She claimed the laws were unconstitutionally vague and violated her right to privacy.",
+        "legalIssue": "Does the Constitution recognize a woman's right to terminate her pregnancy by abortion?",
+        "precedents": [
+            {
+                "name": "Griswold v. Connecticut (1965)",
+                "relevance": "Established constitutional right to privacy"
+            },
+            {
+                "name": "Eisenstadt v. Baird (1972)",
+                "relevance": "Extended privacy rights to individuals"
+            }
+        ],
+        "keyArguments": {
+            "petitioner": [
+                "Right to privacy encompasses abortion decision",
+                "Absolute ban violates Due Process Clause",
+                "Woman's right to control her own body",
+                "Laws are unconstitutionally vague"
+            ],
+            "respondent": [
+                "State has compelling interest in protecting potential life",
+                "No explicit constitutional right to abortion",
+                "State has duty to protect prenatal life",
+                "Medical procedures can be regulated by state"
+            ]
+        },
+        "outcome": "7-2 decision establishing trimester framework balancing woman's privacy rights with state's interests in maternal health and potential life.",
+        "practiceQuestions": [
+            "What is the trimester framework established by this case?",
+            "How does the Court balance competing interests?",
+            "What level of scrutiny was applied?"
+        ]
+    },
+    {
+        "id": "case_004",
+        "title": "Donoghue v. Stevenson",
+        "category": "Tort Law",
+        "jurisdiction": "United Kingdom",
+        "difficulty": "Beginner",
+        "year": 1932,
+        "tags": [
+            "negligence",
+            "duty of care",
+            "neighbor principle"
+        ],
+        "shortDescription": "Established the modern law of negligence and the neighbor principle.",
+        "facts": "Mrs. Donoghue consumed ginger beer from an opaque bottle that allegedly contained a decomposed snail. She became ill and sued the manufacturer, though she had no contract with them.",
+        "legalIssue": "Does a manufacturer owe a duty of care to the ultimate consumer with whom they have no contractual relationship?",
+        "precedents": [
+            {
+                "name": "Winterbottom v. Wright (1842)",
+                "relevance": "Limited liability to contractual relationships"
+            }
+        ],
+        "keyArguments": {
+            "petitioner": [
+                "Manufacturer owes duty to ultimate consumer",
+                "Products should be safe for intended use",
+                "No opportunity for intermediate examination",
+                "Proximity creates duty of care"
+            ],
+            "respondent": [
+                "No contractual relationship exists",
+                "No duty owed beyond immediate purchaser",
+                "Intervening parties break chain of liability",
+                "Floodgates argument - unlimited liability"
+            ]
+        },
+        "outcome": "House of Lords established that manufacturers owe a duty of care to consumers, creating the 'neighbor principle' in negligence law.",
+        "practiceQuestions": [
+            "What is the neighbor principle?",
+            "Why was the bottle being opaque significant?",
+            "How did this case change tort law?"
+        ]
+    },
+    {
+        "id": "case_005",
+        "title": "Carlill v. Carbolic Smoke Ball Company",
+        "category": "Contract Law",
+        "jurisdiction": "United Kingdom",
+        "difficulty": "Beginner",
+        "year": 1893,
+        "tags": [
+            "contract formation",
+            "offer and acceptance",
+            "unilateral contract"
+        ],
+        "shortDescription": "Landmark case on unilateral contracts and advertisements as offers.",
+        "facts": "The Carbolic Smoke Ball Company advertised that it would pay £100 to anyone who contracted influenza after using its product as directed. Mrs. Carlill used the product but still contracted influenza and claimed the reward.",
+        "legalIssue": "Can an advertisement constitute a binding unilateral contract offer?",
+        "precedents": [
+            {
+                "name": "Williams v. Carwardine (1833)",
+                "relevance": "Motive for acceptance irrelevant if conditions met"
+            }
+        ],
+        "keyArguments": {
+            "petitioner": [
+                "Advertisement was a serious offer, not mere puff",
+                "Deposit of £1000 showed serious intention",
+                "Performed conditions by using product as directed",
+                "Acceptance by performance, not notification"
+            ],
+            "respondent": [
+                "Advertisement was mere puff, not legal offer",
+                "Too vague to be enforceable",
+                "No notification of acceptance given",
+                "Offer not made to specific person"
+            ]
+        },
+        "outcome": "Court held the advertisement was a valid offer and Mrs. Carlill's use of the product constituted acceptance, creating a binding contract.",
+        "practiceQuestions": [
+            "What distinguishes an offer from an invitation to treat?",
+            "Why was notification of acceptance not required?",
+            "What made this a unilateral contract?"
+        ]
+    },
+    {
+        "id": "case_006",
+        "title": "Salomon v. Salomon & Co Ltd",
+        "category": "Corporate Law",
+        "jurisdiction": "United Kingdom",
+        "difficulty": "Intermediate",
+        "year": 1897,
+        "tags": [
+            "corporate personality",
+            "limited liability",
+            "veil of incorporation"
+        ],
+        "shortDescription": "Established the principle of corporate separate legal personality.",
+        "facts": "Aron Salomon incorporated his boot-making business, with himself and family members as shareholders. When the company became insolvent, creditors argued the company was merely Salomon's agent and he should be personally liable.",
+        "legalIssue": "Is a validly incorporated company a separate legal entity distinct from its shareholders?",
+        "precedents": [
+            {
+                "name": "Foss v. Harbottle (1843)",
+                "relevance": "Company as separate entity can sue and be sued"
+            }
+        ],
+        "keyArguments": {
+            "petitioner": [
+                "Company validly incorporated under Companies Act",
+                "Separate legal personality is fundamental principle",
+                "Shareholders' liability limited to shares",
+                "All statutory requirements met"
+            ],
+            "respondent": [
+                "Company was mere sham or facade",
+                "Salomon controlled all aspects",
+                "Company was his agent",
+                "Incorporation used to avoid liability"
+            ]
+        },
+        "outcome": "House of Lords held that a validly incorporated company is a separate legal person, establishing the cornerstone of modern corporate law.",
+        "practiceQuestions": [
+            "What is the corporate veil?",
+            "When might courts pierce the corporate veil?",
+            "What are the implications for limited liability?"
+        ]
+    },
+    {
+        "id": "case_007",
+        "title": "Kesavananda Bharati v. State of Kerala",
+        "category": "Constitutional Law",
+        "jurisdiction": "India",
+        "difficulty": "Advanced",
+        "year": 1973,
+        "tags": [
+            "basic structure doctrine",
+            "constitutional amendment",
+            "judicial review"
+        ],
+        "shortDescription": "Established the basic structure doctrine limiting Parliament's power to amend the Constitution.",
+        "facts": "A challenge to Kerala land reform laws and the constitutional amendments that sought to place them beyond judicial review. The case examined the extent of Parliament's power to amend the Constitution.",
+        "legalIssue": "Can Parliament amend any part of the Constitution, including fundamental rights, or are there implied limitations?",
+        "precedents": [
+            {
+                "name": "Golaknath v. State of Punjab (1967)",
+                "relevance": "Held Parliament cannot amend fundamental rights"
+            },
+            {
+                "name": "Shankari Prasad v. Union of India (1951)",
+                "relevance": "Upheld Parliament's unlimited amendment power"
+            }
+        ],
+        "keyArguments": {
+            "petitioner": [
+                "Constitution has basic features that cannot be amended",
+                "Fundamental rights are core to Constitution",
+                "Amendment power is not unlimited",
+                "Democracy requires checks on power"
+            ],
+            "respondent": [
+                "Article 368 gives unlimited amendment power",
+                "Parliament represents people's will",
+                "No implied limitations in Constitution",
+                "Judicial review should be limited"
+            ]
+        },
+        "outcome": "Supreme Court held that while Parliament can amend the Constitution, it cannot alter its 'basic structure', creating a landmark doctrine in constitutional law.",
+        "practiceQuestions": [
+            "What constitutes the 'basic structure' of the Constitution?",
+            "How does this doctrine balance democracy and constitutionalism?",
+            "What is the significance of this case for judicial review?"
+        ]
+    },
+    {
+        "id": "case_008",
+        "title": "R v. Dudley and Stephens",
+        "category": "Criminal Law",
+        "jurisdiction": "United Kingdom",
+        "difficulty": "Intermediate",
+        "year": 1884,
+        "tags": [
+            "necessity defense",
+            "murder",
+            "survival"
+        ],
+        "shortDescription": "Examined the defense of necessity in a murder case involving survival cannibalism.",
+        "facts": "After their ship sank, four crew members were stranded in a lifeboat. After 20 days without food, Dudley and Stephens killed and ate the cabin boy. They were rescued four days later.",
+        "legalIssue": "Can necessity be a defense to murder when killing another to preserve one's own life?",
+        "precedents": [
+            {
+                "name": "R v. Bourne (1952)",
+                "relevance": "Necessity defense in abortion case"
+            }
+        ],
+        "keyArguments": {
+            "petitioner": [
+                "Extreme necessity justified actions",
+                "Boy would have died anyway",
+                "Acted to save majority",
+                "Custom of the sea recognized practice"
+            ],
+            "respondent": [
+                "No legal justification for taking innocent life",
+                "Who decides whose life is worth less?",
+                "Slippery slope to vigilante justice",
+                "Moral absolute against murder"
+            ]
+        },
+        "outcome": "Court held that necessity is not a defense to murder, though the defendants' death sentences were commuted to six months imprisonment.",
+        "practiceQuestions": [
+            "Why did the court reject the necessity defense?",
+            "What are the moral implications of this decision?",
+            "How does this case relate to modern trolley problems?"
+        ]
+    },
+    {
+        "id": "case_009",
+        "title": "Hadley v. Baxendale",
+        "category": "Contract Law",
+        "jurisdiction": "United Kingdom",
+        "difficulty": "Intermediate",
+        "year": 1854,
+        "tags": [
+            "damages",
+            "remoteness",
+            "foreseeability"
+        ],
+        "shortDescription": "Established the rule for remoteness of damages in contract law.",
+        "facts": "Hadley's mill was stopped by a broken crankshaft. Baxendale was hired to transport it for repair but delayed delivery. Hadley sued for lost profits during the delay.",
+        "legalIssue": "What damages are recoverable for breach of contract?",
+        "precedents": [
+            {
+                "name": "Flureau v. Thornhill (1776)",
+                "relevance": "Early case on contract damages"
+            }
+        ],
+        "keyArguments": {
+            "petitioner": [
+                "Defendant's delay caused lost profits",
+                "Damages flow naturally from breach",
+                "Defendant knew mill was stopped",
+                "Entitled to full compensation"
+            ],
+            "respondent": [
+                "Lost profits too remote",
+                "Not informed mill would be idle",
+                "Could not foresee extent of loss",
+                "Damages should be limited to direct loss"
+            ]
+        },
+        "outcome": "Court established two-limb test: damages must arise naturally from breach OR be in reasonable contemplation of both parties at contract formation.",
+        "practiceQuestions": [
+            "What are the two limbs of the Hadley v. Baxendale test?",
+            "Why is foreseeability important in contract damages?",
+            "How does this differ from tort damages?"
+        ]
+    },
+    {
+        "id": "case_010",
+        "title": "Marbury v. Madison",
+        "category": "Constitutional Law",
+        "jurisdiction": "United States",
+        "difficulty": "Advanced",
+        "year": 1803,
+        "tags": [
+            "judicial review",
+            "separation of powers",
+            "constitutional interpretation"
+        ],
+        "shortDescription": "Established the principle of judicial review in the United States.",
+        "facts": "William Marbury was appointed Justice of the Peace but his commission was not delivered. He petitioned the Supreme Court for a writ of mandamus to compel delivery.",
+        "legalIssue": "Does the Supreme Court have the authority to review acts of Congress and declare them unconstitutional?",
+        "precedents": [
+            {
+                "name": "Hylton v. United States (1796)",
+                "relevance": "Early case implying judicial review power"
+            }
+        ],
+        "keyArguments": {
+            "petitioner": [
+                "Entitled to commission once signed",
+                "Supreme Court has original jurisdiction",
+                "Judiciary Act grants mandamus power",
+                "Right without remedy is meaningless"
+            ],
+            "respondent": [
+                "Political question beyond court's reach",
+                "No constitutional basis for judicial review",
+                "Congress defines court jurisdiction",
+                "Executive discretion in appointments"
+            ]
+        },
+        "outcome": "Court held it has power to review congressional acts and declare them unconstitutional, but ruled against Marbury on jurisdictional grounds.",
+        "practiceQuestions": [
+            "How did Marshall avoid political confrontation while establishing judicial review?",
+            "What is the constitutional basis for judicial review?",
+            "Why is this case considered foundational to American constitutional law?"
+        ]
+    }
+]

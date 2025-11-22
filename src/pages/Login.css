@@ -1,0 +1,230 @@
+.login-page {
+    min-height: 100vh;
+    background: #050505;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Cyber Grid Background */
+.cyber-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    transform: perspective(500px) rotateX(60deg);
+    transform-origin: center top;
+    opacity: 0.3;
+    animation: gridMove 20s linear infinite;
+}
+
+@keyframes gridMove {
+    0% {
+        transform: perspective(500px) rotateX(60deg) translateY(0);
+    }
+
+    100% {
+        transform: perspective(500px) rotateX(60deg) translateY(50px);
+    }
+}
+
+/* Hologram Card */
+.hologram-card {
+    width: 400px;
+    background: rgba(10, 10, 15, 0.8);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    position: relative;
+    z-index: 10;
+    box-shadow:
+        0 0 40px rgba(139, 92, 246, 0.1),
+        inset 0 0 20px rgba(139, 92, 246, 0.05);
+    clip-path: polygon(0 0,
+            100% 0,
+            100% 85%,
+            90% 100%,
+            0 100%);
+}
+
+.hologram-card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #8b5cf6, transparent, #06b6d4);
+    z-index: -1;
+    opacity: 0.3;
+    clip-path: polygon(0 0,
+            100% 0,
+            100% 85%,
+            90% 100%,
+            0 100%);
+}
+
+/* Header */
+.card-header {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.logo-glitch {
+    font-size: 32px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 4px;
+    position: relative;
+    text-shadow: 2px 2px 0px #8b5cf6;
+}
+
+.system-status {
+    font-size: 10px;
+    color: #06b6d4;
+    letter-spacing: 2px;
+    margin-top: 8px;
+}
+
+/* Avatar Scanner */
+.avatar-scanner {
+    width: 100px;
+    height: 100px;
+    border: 2px solid rgba(139, 92, 246, 0.3);
+    margin: 0 auto 32px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    overflow: hidden;
+}
+
+.scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #06b6d4;
+    box-shadow: 0 0 10px #06b6d4;
+    animation: scan 2s linear infinite;
+}
+
+@keyframes scan {
+    0% {
+        top: 0;
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        top: 100%;
+        opacity: 0;
+    }
+}
+
+/* Role Selector */
+.role-selector-login {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 4px;
+    border-radius: 4px;
+}
+
+.role-option {
+    flex: 1;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    color: #6b7280;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+}
+
+.role-option.active {
+    background: #8b5cf6;
+    color: white;
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.4);
+}
+
+/* Inputs */
+.input-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.input-group label {
+    display: block;
+    font-size: 10px;
+    color: #06b6d4;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.input-group input {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 12px;
+    color: white;
+    font-family: 'Space Grotesk', monospace;
+    transition: all 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    background: rgba(139, 92, 246, 0.1);
+    border-bottom-color: #8b5cf6;
+}
+
+/* Button */
+.login-btn {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+    border: none;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    margin-top: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+
+.login-btn:hover {
+    letter-spacing: 4px;
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+}
+
+.login-btn.loading {
+    background: #333;
+    cursor: not-allowed;
+}
+
+/* Footer */
+.card-footer {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #4b5563;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 16px;
+}
