@@ -48,6 +48,14 @@ await recordingsDB.read();
 
 // ------------------------------------------------------------------
 // 3️⃣  Express & Socket.io setup
+app.use(cors({
+    origin: [
+        'http://localhost:5173',
+        'https://moot-court-simulator.vercel.app',
+        'https://moot-court-simulator-*.vercel.app'
+    ],
+    credentials: true
+}));
 // ------------------------------------------------------------------
 const app = express();
 app.use(cors());
