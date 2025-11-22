@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: moot-court-backend
+    env: node
+    repo: DiyaMittal02/moot-court-simulator
+    branch: main
+    buildCommand: npm install
+    startCommand: node server/index.js
+    plan: free
+    autoDeploy: true
+
+  - type: static
+    name: moot-court-frontend
+    env: static
+    repo: DiyaMittal02/moot-court-simulator
+    branch: main
+    buildCommand: npm run build
+    publishPath: dist
+    envVars:
+      - key: VITE_API_URL
+        value: "https://moot-court-backend.onrender.com"
+    plan: free
+    autoDeploy: true
