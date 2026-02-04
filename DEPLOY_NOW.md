@@ -45,7 +45,7 @@ This is the EASIEST way - no local build needed!
 
 3. **Push Code**:
    ```cmd
-   git remote add origin https://github.com/YOUR_USERNAME/moot-court-simulator.git
+   git remote add origin https://github.com/DiyaMittal02/moot-court-simulator.git
    git branch -M main
    git push -u origin main
    ```
