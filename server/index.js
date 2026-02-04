@@ -10,6 +10,8 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs/promises';
 import { randomUUID } from 'crypto';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcryptjs';
 
 // ---------- LowDB (JSON file persistence) ----------
 import { Low } from 'lowdb';
@@ -42,6 +44,10 @@ const recordingsAdapter = new JSONFile(join(dataDir, 'recordings.json'));
 export const recordingsDB = new Low(recordingsAdapter, []);
 await recordingsDB.read();
 
+const usersAdapter = new JSONFile(join(dataDir, 'users.json'));
+export const usersDB = new Low(usersAdapter, []);
+await usersDB.read();
+
 // 3️⃣  Express & Socket.io setup (app → server → cors → io)
 const app = express();
 const server = http.createServer(app);
@@ -67,6 +73,24 @@ app.use(
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
+// ---------- AUTH MIDDLEWARE ----------
+const JWT_SECRET = process.env.JWT_SECRET || 'moot-court-secret-key-2024';
+
+const authenticateToken = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
+
+    if (!token) {
+        return res.status(401).json({ error: 'No token provided' });
+    }
+
+    jwt.verify(token, JWT_SECRET, (err, user) => {
+        if (err) return res.status(403).json({ error: 'Invalid token' });
+        req.user = user;
+        next();
+    });
+};
+
 // ---------- Socket.io ----------
 const io = new SocketIOServer(server, {
     cors: {
@@ -85,7 +109,125 @@ const broadcastNotification = (type, message) => {
 };
 
 // 5️⃣  API ROUTES
-// ----- Case Library ------------------------------------------------
+// ----- Authentication ----------------------------------------------
+app.post('/api/auth/register', async (req, res) => {
+    try {
+        const { username, email, password, role } = req.body;
+
+        // Validation
+        if (!username || !email || !password) {
+            return res.status(400).json({ error: 'All fields are required' });
+        }
+
+        // Check if user exists
+        await usersDB.read();
+        const existingUser = usersDB.data.find(u => u.email === email);
+        if (existingUser) {
+            return res.status(400).json({ error: 'User already exists' });
+        }
+
+        // Hash password
+        const hashedPassword = await bcrypt.hash(password, 10);
+
+        // Create user
+        const newUser = {
+            id: randomUUID(),
+            username,
+            email,
+            password: hashedPassword,
+            role: role || 'student',
+            createdAt: new Date().toISOString(),
+            stats: {
+                casesCompleted: 0,
+                totalScore: 0,
+                winRate: 0
+            }
+        };
+
+        usersDB.data.push(newUser);
+        await usersDB.write();
+
+        // Generate token
+        const token = jwt.sign({ id: newUser.id, email: newUser.email, role: newUser.role }, JWT_SECRET, { expiresIn: '7d' });
+
+        res.json({
+            token,
+            user: {
+                id: newUser.id,
+                username: newUser.username,
+                email: newUser.email,
+                role: newUser.role
+            }
+        });
+    } catch (err) {
+        console.error('Registration error:', err);
+        res.status(500).json({ error: 'Registration failed' });
+    }
+});
+
+app.post('/api/auth/login', async (req, res) => {
+    try {
+        const { email, password } = req.body;
+
+        if (!email || !password) {
+            return res.status(400).json({ error: 'Email and password required' });
+        }
+
+        // Find user
+        await usersDB.read();
+        const user = usersDB.data.find(u => u.email === email);
+        if (!user) {
+            return res.status(401).json({ error: 'Invalid credentials' });
+        }
+
+        // Verify password
+        const validPassword = await bcrypt.compare(password, user.password);
+        if (!validPassword) {
+            return res.status(401).json({ error: 'Invalid credentials' });
+        }
+
+        // Generate token
+        const token = jwt.sign({ id: user.id, email: user.email, role: user.role }, JWT_SECRET, { expiresIn: '7d' });
+
+        res.json({
+            token,
+            user: {
+                id: user.id,
+                username: user.username,
+                email: user.email,
+                role: user.role,
+                stats: user.stats
+            }
+        });
+    } catch (err) {
+        console.error('Login error:', err);
+        res.status(500).json({ error: 'Login failed' });
+    }
+});
+
+app.get('/api/auth/me', authenticateToken, async (req, res) => {
+    try {
+        await usersDB.read();
+        const user = usersDB.data.find(u => u.id === req.user.id);
+
+        if (!user) {
+            return res.status(404).json({ error: 'User not found' });
+        }
+
+        res.json({
+            id: user.id,
+            username: user.username,
+            email: user.email,
+            role: user.role,
+            stats: user.stats
+        });
+    } catch (err) {
+        console.error('Get user error:', err);
+        res.status(500).json({ error: 'Failed to get user' });
+    }
+});
+
+// -----Case Library ------------------------------------------------
 app.get('/api/case-library', async (req, res) => {
     try {
         const caseLibraryPath = join(dataDir, 'case-library.json');
