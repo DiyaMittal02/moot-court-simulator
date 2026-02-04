@@ -20,5 +20,22 @@ export default defineConfig({
         global: 'globalThis'
       }
     }
+  },
+  build: {
+    // Ensure CSS is extracted and properly included
+    cssCodeSplit: true,
+    assetsInlineLimit: 0,
+    rollupOptions: {
+      output: {
+        // Ensure assets are properly named
+        assetFileNames: 'assets/[name].[hash][extname]',
+        chunkFileNames: 'assets/[name].[hash].js',
+        entryFileNames: 'assets/[name].[hash].js'
+      }
+    }
+  },
+  css: {
+    // Ensure CSS is properly processed
+    devSourcemap: true
   }
 })
