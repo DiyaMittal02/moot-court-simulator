@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../config/api';
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -19,7 +20,7 @@ const Dashboard = () => {
 
     const fetchCases = async () => {
         try {
-            const res = await fetch('http://localhost:4000/api/cases');
+            const res = await fetch(`${API_URL}/api/cases`);
             const data = await res.json();
             setCases(data);
             setLoading(false);
@@ -40,7 +41,7 @@ const Dashboard = () => {
         };
 
         try {
-            const res = await fetch('http://localhost:4000/api/cases', {
+            const res = await fetch(`${API_URL}/api/cases`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload)
@@ -64,7 +65,7 @@ const Dashboard = () => {
         setActiveStrategy(null);
 
         try {
-            const res = await fetch('http://localhost:4000/api/ai-strategy', {
+            const res = await fetch(`${API_URL}/api/ai-strategy`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ caseTitle: caseItem.title, fileName: caseItem.fileName })

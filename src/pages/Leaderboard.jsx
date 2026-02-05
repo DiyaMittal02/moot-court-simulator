@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { API_URL } from '../config/api';
 import { Link } from 'react-router-dom';
 import './Dashboard.css';
 
@@ -12,7 +13,7 @@ const Leaderboard = () => {
 
     const fetchLeaderboard = async () => {
         try {
-            const res = await fetch('http://localhost:4000/api/leaderboard');
+            const res = await fetch(`${API_URL}/api/leaderboard`);
             const data = await res.json();
             setLeaders(data);
             setLoading(false);

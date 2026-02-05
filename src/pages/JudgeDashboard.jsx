@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { API_URL } from '../config/api';
 import './Dashboard.css';
 
 const JudgeDashboard = () => {
     const [cases, setCases] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:4000/api/cases')
+        fetch(`${API_URL}/api/cases`)
             .then(res => res.json())
             .then(data => setCases(data))
             .catch(err => console.error(err));

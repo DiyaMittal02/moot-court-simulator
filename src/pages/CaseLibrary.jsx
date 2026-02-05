@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../config/api';
 import './CaseLibrary.css';
 
 const CaseLibrary = () => {
@@ -26,7 +27,7 @@ const CaseLibrary = () => {
 
     const fetchCases = async () => {
         try {
-            const res = await fetch('http://localhost:4000/api/case-library');
+            const res = await fetch(`${API_URL}/api/case-library`);
             const data = await res.json();
             setCases(data);
             setFilteredCases(data);
@@ -89,7 +90,7 @@ const CaseLibrary = () => {
 
     const useCaseTemplate = async (caseItem) => {
         try {
-            const res = await fetch('http://localhost:4000/api/cases', {
+            const res = await fetch(`${API_URL}/api/cases`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

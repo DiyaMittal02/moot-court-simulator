@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { io } from 'socket.io-client';
 import Peer from 'simple-peer';
 import NotificationToast from '../components/NotificationToast';
+import { API_URL, SOCKET_URL } from '../config/api';
 import './Courtroom.css';
 // UUID removed – using custom generateId() function
 const generateId = () => '_' + Math.random().toString(36).substr(2, 9);
@@ -117,7 +118,7 @@ const Courtroom = () => {
 
     // Socket initialization and event handling
     const initializeSocket = () => {
-        const newSocket = io('http://localhost:4000');
+        const newSocket = io(SOCKET_URL);
         setSocket(newSocket);
 
         newSocket.on('connect', () => {
@@ -324,7 +325,7 @@ const Courtroom = () => {
         };
 
         try {
-            await fetch('http://localhost:4000/api/recordings', {
+            await fetch(`${API_URL}/api/recordings`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(recording)
@@ -349,7 +350,7 @@ const Courtroom = () => {
             });
         }
         try {
-            const res = await fetch('http://localhost:4000/api/ai-analyze', {
+            const res = await fetch(`${API_URL}/api/ai-analyze`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ argument: text }),

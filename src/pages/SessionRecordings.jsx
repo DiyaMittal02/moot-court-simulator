@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { API_URL } from '../config/api';
 import './SessionRecordings.css';
 
 const SessionRecordings = () => {
@@ -19,7 +20,7 @@ const SessionRecordings = () => {
 
     const fetchRecordings = async () => {
         try {
-            const res = await fetch('http://localhost:4000/api/recordings');
+            const res = await fetch(`${API_URL}/api/recordings`);
             const data = await res.json();
             setRecordings(data);
             setLoading(false);
@@ -65,7 +66,7 @@ const SessionRecordings = () => {
         if (!confirm('Are you sure you want to delete this recording?')) return;
 
         try {
-            await fetch(`http://localhost:4000/api/recordings/${recordingId}`, {
+            await fetch(`${API_URL}/api/recordings/${recordingId}`, {
                 method: 'DELETE'
             });
             fetchRecordings();

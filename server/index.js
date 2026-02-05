@@ -13,6 +13,9 @@ import { randomUUID } from 'crypto';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcryptjs';
 
+// ---------- Gemini AI Service ----------
+import { initializeGemini, analyzeArgument, generateStrategy } from './gemini-service.js';
+
 // ---------- LowDB (JSON file persistence) ----------
 import { Low } from 'lowdb';
 import { JSONFile } from 'lowdb/node';
@@ -47,6 +50,9 @@ await recordingsDB.read();
 const usersAdapter = new JSONFile(join(dataDir, 'users.json'));
 export const usersDB = new Low(usersAdapter, []);
 await usersDB.read();
+
+// Initialize Gemini AI
+initializeGemini();
 
 // 3️⃣  Express & Socket.io setup (app → server → cors → io)
 const app = express();
@@ -356,59 +362,39 @@ app.post('/api/analytics/:caseId', async (req, res) => {
     res.json({ success: true, stats: analyticsDB.data[caseId] });
 });
 
-// ----- AI Mock -----------------------------------------------------
+// ----- AI Analysis (Real Gemini AI!) ---------------------------------
 app.post('/api/ai-analyze', async (req, res) => {
-    const { argument } = req.body;
-    const length = argument.length;
-    const score = Math.min(100, Math.max(0, 100 - Math.abs(200 - length)));
-    const feedback = {
-        score,
-        strengths: ['Clear structure', 'Good vocabulary'],
-        improvements: ['Add more evidence', 'Use stronger transitions'],
-        suggestion: 'Consider citing a precedent to strengthen your point.',
-    };
-    res.json(feedback);
+    try {
+        const { argument } = req.body;
+
+        if (!argument || argument.trim().length === 0) {
+            return res.status(400).json({ error: 'Argument text is required' });
+        }
+
+        // Use real Gemini AI for analysis
+        const feedback = await analyzeArgument(argument);
+        res.json(feedback);
+    } catch (error) {
+        console.error('AI analysis error:', error);
+        res.status(500).json({ error: 'Failed to analyze argument' });
+    }
 });
 
 app.post('/api/ai-strategy', async (req, res) => {
-    const { caseTitle } = req.body;
-    const strategies = {
-        'Miranda v. Arizona': {
-            coreIssue: 'Whether custodial interrogation requires constitutional warnings',
-            probabilityOfSuccess: 75,
-            winningPath:
-                'Focus on the coercive nature of custodial interrogation and the need for procedural safeguards to protect Fifth Amendment rights',
-            opponentWeakness:
-                'Difficulty proving confession was truly voluntary without clear safeguards',
-            precedents: [
-                { name: 'Escobedo v. Illinois', relevance: 'Established right to counsel during interrogation' },
-                { name: 'Gideon v. Wainwright', relevance: 'Right to counsel is fundamental' },
-            ],
-        },
-        'Brown v. Board of Education': {
-            coreIssue: 'Whether racial segregation in public schools violates Equal Protection',
-            probabilityOfSuccess: 85,
-            winningPath: 'Demonstrate that separate facilities are inherently unequal and cause psychological harm',
-            opponentWeakness: 'Cannot prove separate facilities are truly equal in all respects',
-            precedents: [
-                { name: 'Sweatt v. Painter', relevance: 'Found inequality in segregated professional schools' },
-                { name: 'McLaurin v. Oklahoma', relevance: 'Segregation within schools creates inequality' },
-            ],
-        },
-    };
-    const defaultStrategy = {
-        coreIssue: 'Identify the central legal question at stake in this case',
-        probabilityOfSuccess: 65,
-        winningPath:
-            'Build a strong factual foundation, cite relevant precedents, and demonstrate how the law supports your position',
-        opponentWeakness: 'Look for gaps in their evidence and inconsistencies in their legal reasoning',
-        precedents: [
-            { name: 'Relevant Case Law 1', relevance: 'Supports your legal theory' },
-            { name: 'Relevant Case Law 2', relevance: "Distinguishes opponent's arguments" },
-        ],
-    };
-    const strategy = strategies[caseTitle] || defaultStrategy;
-    res.json(strategy);
+    try {
+        const { caseTitle, fileName } = req.body;
+
+        if (!caseTitle) {
+            return res.status(400).json({ error: 'Case title is required' });
+        }
+
+        // Use real Gemini AI for strategy generation
+        const strategy = await generateStrategy(caseTitle, fileName || '');
+        res.json(strategy);
+    } catch (error) {
+        console.error('Strategy generation error:', error);
+        res.status(500).json({ error: 'Failed to generate strategy' });
+    }
 });
 
 // 6️⃣  Socket.io events
