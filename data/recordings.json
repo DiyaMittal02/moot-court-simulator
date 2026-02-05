@@ -195,5 +195,37 @@
       ]
     },
     "recordedAt": "2025-11-22T18:20:47.682Z"
+  },
+  {
+    "id": "b52cba69-9a5d-4b24-a01d-d2e22546fae7",
+    "caseTitle": "Case #d636482b-74bc-4d50-b335-344053896486",
+    "type": "Practice",
+    "role": "Judge",
+    "duration": 28,
+    "speakingTime": 19,
+    "argumentCount": 0,
+    "objectionCount": 1,
+    "score": 60,
+    "hasHighlights": true,
+    "transcript": [
+      {
+        "timestamp": 15,
+        "speaker": "You",
+        "text": "OBJECTION!"
+      }
+    ],
+    "insights": {
+      "strengths": [
+        "Participated in the session",
+        "Maintained courtroom decorum",
+        "Active participation"
+      ],
+      "improvements": [
+        "Present more arguments to strengthen your case",
+        "Good use of objections",
+        "Practice citing more legal precedents"
+      ]
+    },
+    "recordedAt": "2026-02-05T09:15:18.564Z"
   }
 ]
